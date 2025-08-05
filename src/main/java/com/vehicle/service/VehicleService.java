@@ -11,4 +11,6 @@ public String saveVehicle(Vehicle vehicle);
 public List<Vehicle> getAllVehicle();
 
 public Vehicle getVehicleById(int id);
+
+public String DeleteById(int id);
 }

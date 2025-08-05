@@ -36,4 +36,10 @@ public class VehicleServiceImpl implements VehicleService {
                     ->new NullPointerException("Vehicle id is not found" + id));
             return vehicleById;
     }
+
+    @Override
+    public String DeleteById(int id) {
+        vehicleRepository.deleteById(id);
+        return "Vehicle Deleted";
+    }
 }

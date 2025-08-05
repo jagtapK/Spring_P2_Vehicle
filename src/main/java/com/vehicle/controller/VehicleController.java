@@ -38,4 +38,10 @@ public class VehicleController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/deleteById/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable int id){
+        vehicleService.DeleteById(id);
+        return new ResponseEntity<>("Vehicle Deleted",HttpStatus.OK);
+    }
 }
