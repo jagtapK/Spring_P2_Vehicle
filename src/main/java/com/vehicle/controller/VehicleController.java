@@ -54,4 +54,10 @@ public class VehicleController {
         Vehicle v = vehicleService.updateById(id, vehicle);
         return new ResponseEntity<>(v, HttpStatus.OK);
     }
+
+    @GetMapping("/SaveAllVehicles")
+    public ResponseEntity<String>getAllVehicles(List<Vehicle> vehicles){
+        vehicleService.saveAllVehicle(vehicles);
+        return new ResponseEntity<>("Vehicle Data saved",HttpStatus.CREATED);
+    }
 }

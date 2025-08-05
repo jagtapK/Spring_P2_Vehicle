@@ -58,4 +58,9 @@ public class VehicleServiceImpl implements VehicleService {
         Vehicle vehicle1 = vehicleRepository.save(vehicle);
         return vehicle1;
     }
+
+    @Override
+    public void saveAllVehicle(List<Vehicle> vehicle) {
+        vehicleRepository.saveAll(vehicle);
+    }
 }
