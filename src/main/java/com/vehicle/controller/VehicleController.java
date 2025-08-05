@@ -23,12 +23,14 @@ public class VehicleController {
         return new ResponseEntity<>("vehicle data saved", HttpStatus.CREATED);
     }
 
+    // we can get all vehicle
     @GetMapping("/getAllVehicle")
     public ResponseEntity<List<Vehicle>> getAllVehicle() {
         List<Vehicle> vlist = vehicleService.getAllVehicle();
         return new ResponseEntity<>(vlist, HttpStatus.OK);
     }
 
+    // we can get vehicle by its id
     @GetMapping("/GetById/{id}")
     public ResponseEntity<Vehicle> getVehicleById(@PathVariable int id) {
         Vehicle vehicle = vehicleService.getVehicleById(id);
@@ -39,9 +41,17 @@ public class VehicleController {
         }
     }
 
+    // it will delete vehicle by id
     @GetMapping("/deleteById/{id}")
-    public ResponseEntity<String> deleteById(@PathVariable int id){
+    public ResponseEntity<String> deleteById(@PathVariable int id) {
         vehicleService.DeleteById(id);
-        return new ResponseEntity<>("Vehicle Deleted",HttpStatus.OK);
+        return new ResponseEntity<>("Vehicle Deleted", HttpStatus.OK);
+    }
+
+    //It will Update Exiting Details by id
+    @PutMapping("/updateVehicle/{id}")
+    public ResponseEntity<Vehicle> updateById(@PathVariable int id, @RequestBody Vehicle vehicle) {
+        Vehicle v = vehicleService.updateById(id, vehicle);
+        return new ResponseEntity<>(v, HttpStatus.OK);
     }
 }
