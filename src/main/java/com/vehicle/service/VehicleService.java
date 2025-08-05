@@ -16,5 +16,7 @@ public interface VehicleService {
 
     Vehicle updateById(int id, Vehicle newDetails);
 
-   public void saveAllVehicle(List<Vehicle> vehicle);
+    public void saveAllVehicle(List<Vehicle> vehicle);
+
+    public String deleteById(int id);
 }

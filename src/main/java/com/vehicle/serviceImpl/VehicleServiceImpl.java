@@ -63,4 +63,12 @@ public class VehicleServiceImpl implements VehicleService {
     public void saveAllVehicle(List<Vehicle> vehicle) {
         vehicleRepository.saveAll(vehicle);
     }
+
+    @Override
+    public String deleteById(int id) {
+        Vehicle vehicle = vehicleRepository.findById(id).orElseThrow(()
+                -> new NullPointerException("Id is not found" + id));
+        vehicleRepository.deleteById(id);
+        return "Vehicle Deleted Successfully";
+    }
 }

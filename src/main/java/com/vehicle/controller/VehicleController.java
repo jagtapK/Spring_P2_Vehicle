@@ -56,8 +56,14 @@ public class VehicleController {
     }
 
     @GetMapping("/SaveAllVehicles")
-    public ResponseEntity<String>getAllVehicles(List<Vehicle> vehicles){
+    public ResponseEntity<String> getAllVehicles(List<Vehicle> vehicles) {
         vehicleService.saveAllVehicle(vehicles);
-        return new ResponseEntity<>("Vehicle Data saved",HttpStatus.CREATED);
+        return new ResponseEntity<>("Vehicle Data saved", HttpStatus.CREATED);
+    }
+
+    @GetMapping("/getAllVehicles")
+    public ResponseEntity<String> deleteAll(List<Vehicle> vehicles) {
+        vehicleService.saveAllVehicle(vehicles);
+        return new ResponseEntity<>("Vehicle Data Saved", HttpStatus.CREATED);
     }
 }
