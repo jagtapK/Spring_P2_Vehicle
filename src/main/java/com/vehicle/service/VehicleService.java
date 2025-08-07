@@ -19,4 +19,6 @@ public interface VehicleService {
     public void saveAllVehicle(List<Vehicle> vehicle);
 
     public String deleteById(int id);
+
+    List<Vehicle> filterVehicleByColor(String color);
 }

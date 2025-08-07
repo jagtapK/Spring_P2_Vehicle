@@ -17,6 +17,15 @@ public class Vehicle {
     private String model;
 
     private int price;
+    private String  VehicleByColor;
+
+    public String getVehicleByColor(String color) {
+        return VehicleByColor;
+    }
+
+    public void setVehicleByColor(String vehicleByColor) {
+        VehicleByColor = vehicleByColor;
+    }
 
     public int getId() {
         return id;
@@ -66,6 +75,7 @@ public class Vehicle {
                 ", color='" + color + '\'' +
                 ", model='" + model + '\'' +
                 ", price=" + price +
+                ", VehicleByColor='" + VehicleByColor + '\'' +
                 '}';
     }
 }
