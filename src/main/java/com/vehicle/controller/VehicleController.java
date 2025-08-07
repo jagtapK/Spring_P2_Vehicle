@@ -66,4 +66,9 @@ public class VehicleController {
         vehicleService.saveAllVehicle(vehicles);
         return new ResponseEntity<>("Vehicle Data Saved", HttpStatus.CREATED);
     }
+
+    public ResponseEntity<List<Vehicle>> filterByColor(String color) {
+        List<Vehicle> vehicleList = vehicleService.filterVehicleByColor(color);
+        return new ResponseEntity<>(vehicleList, HttpStatus.OK);
+    }
 }
